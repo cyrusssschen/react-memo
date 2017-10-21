@@ -1,19 +1,19 @@
-import { ADD_NOTE, DELETE_NOTE, SHOW_NOTE, SHOW_LAYER, SHOW_EDITER } from '../constants/index.js';
+import { ADD_MEMO, DELETE_MEMO, SHOW_MEMO, SHOW_LAYER, SHOW_EDITER } from '../constants/index.js';
 import {setStorage, getStorage} from '../utils/storage';
 
 // Get initial state
-const localnotes = JSON.parse(getStorage('notes'));
-const localcnote = getStorage('cnote');
+const localmemos = JSON.parse(getStorage('memos'));
+const localcmemo = getStorage('cmemo');
 const initialState = {
-  notes: localnotes || [],
-  cnote: localcnote || {},
+  memos: localmemos || [],
+  cmemo: localcmemo || {},
   isShowLayer: false,
   idShowEditer: false
 };
 
-const note = (state = {}, action) => {
+const memo = (state = {}, action) => {
   switch (action.type) {
-    case ADD_NOTE:
+    case ADD_MEMO:
       return Object.assign({}, state, {
         id: action.id,
         title: action.title,
@@ -25,9 +25,9 @@ const note = (state = {}, action) => {
   }
 }
 
-const notes = (state = [], action) => {
+const memos = (state = [], action) => {
   switch (action.type) {
-    case ADD_NOTE:
+    case ADD_MEMO:
       let isNew = true;
       const _arr = state.map((item) => {
         if (item.id === action.id) {
@@ -40,7 +40,7 @@ const notes = (state = [], action) => {
       })
 
       if (isNew) {
-        return [...state, note({}, action)];
+        return [...state, memo({}, action)];
       } else {
         return _arr;
       }
@@ -49,19 +49,19 @@ const notes = (state = [], action) => {
   }
 }
 
-const noteApp = (state = initialState, action) => {
+const memoApp = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_NOTE:
-      let _notes = notes(state.notes, action);
+    case ADD_MEMO:
+      let _memos = memos(state.memos, action);
       // set local storage
-      setStorage('notes',JSON.stringify(_notes));
+      setStorage('memos',JSON.stringify(_memos));
 
       return Object.assign({}, state, {
-        notes: _notes
+        memos: _memos
       });
-    case SHOW_NOTE:
+    case SHOW_MEMO:
       // add active style when item is chosen
-      const notesArr = state.notes.map((item) => {
+      const memosArr = state.memos.map((item) => {
         if (item.id === action.id) {
           item.isActive = true;
         } else {
@@ -69,28 +69,28 @@ const noteApp = (state = initialState, action) => {
         }
         return item;
       })
-      let _cnote = state.notes.filter(item => item.id === action.id)[0];
+      let _cmemo = state.memos.filter(item => item.id === action.id)[0];
 
       // set local storage
-      setStorage('notes',JSON.stringify(notesArr));
-      setStorage('cnote',_cnote);
+      setStorage('memos',JSON.stringify(memosArr));
+      setStorage('cmemo',_cmemo);
 
       return Object.assign({}, state, {
-        notes: notesArr,
-        cnote: _cnote
+        memos: memosArr,
+        cmemo: _cmemo
       });
     
       // Delete list item
-    case DELETE_NOTE:
-      let newnotes = state.notes.filter(item => item.id !== action.id);
+    case DELETE_MEMO:
+      let newmemos = state.memos.filter(item => item.id !== action.id);
 
       // Set local storage
-      setStorage('notes',JSON.stringify(newnotes));
-      setStorage('cnote',{});
+      setStorage('memos',JSON.stringify(newmemos));
+      setStorage('cmemo',{});
 
       return Object.assign({}, state, {
-        notes: newnotes,
-        cnote: {}
+        memos: newmemos,
+        cmemo: {}
       });
     case SHOW_LAYER:
       return Object.assign({}, state, {
@@ -105,5 +105,5 @@ const noteApp = (state = initialState, action) => {
   }
 }
 
-export default noteApp;
+export default memoApp;
 

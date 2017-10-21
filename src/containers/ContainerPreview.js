@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Preview from '../components/Preview';
-import { deleteNote, showEditer } from '../actions/note';
+import { deleteMemo, showEditer } from '../actions/memo';
 
 const mapStateToProps = (state, ownProps) => ({
-  currentNote: state.cnote,
+  currentMemo: state.cmemo,
   isShowEditer: state.isShowEditer
 });
 
@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(showEditer(isSE))
   },
   deleteClick: (id) => {
-    dispatch(deleteNote(id))
+    dispatch(deleteMemo(id))
   }
 });
 
