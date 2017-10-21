@@ -19,7 +19,7 @@ class Preview extends Component {
   }
 
   editMemo() {
-    if (this.props.currentNote.id === undefined) {
+    if (this.props.currentMemo.id === undefined) {
       this.setState({
         errMsg: ERR_MSG_ILLEGAL_EDIT,
         visible: true
@@ -31,7 +31,7 @@ class Preview extends Component {
   }
 
   deleteMemo() {
-    const _id = this.props.currentNote.id;
+    const _id = this.props.currentMemo.id;
     if (_id === undefined) {
       this.setState({
         errMsg: ERR_MSG_ILLEGAL_EDIT,
@@ -57,7 +57,7 @@ class Preview extends Component {
           <a title="Edit" className="modify-btn iconfont" onClick={() => this.editMemo()}>&#xe738;</a>
           <a title="Delete" className="delete-btn iconfont" onClick={() => this.deleteMemo()}>&#xe74b;</a>
         </div>
-        <div onClick={this.props.onClick} className="preview-wrap markdown-body" dangerouslySetInnerHTML={{ __html: marked(`${this.props.currentNote.title ? '# ' + this.props.currentNote.title : ''}\n\n${this.props.currentNote.content ? this.props.currentNote.content : ''}`) }}></div>
+        <div onClick={this.props.onClick} className="preview-wrap markdown-body" dangerouslySetInnerHTML={{ __html: marked(`${this.props.currentMemo.title ? '# ' + this.props.currentMemo.title : ''}\n\n${this.props.currentMemo.content ? this.props.currentMemo.content : ''}`) }}></div>
         <Rodal width="200" height="100" animation="zoom" closeOnEsc="true" visible={this.state.visible} onClose={this.hideErrMsg.bind(this)}>
           <div className="error-msg">
             <p>{this.state.errMsg}</p>
