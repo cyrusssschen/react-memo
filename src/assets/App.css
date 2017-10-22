@@ -5,7 +5,6 @@
     bottom: 0;
     left: 0;
     background-color: #fff;
-    --color-theme: #00BCD4;
 }
 
 .head-wrap {
@@ -115,6 +114,7 @@ main.hastop{
 .list-wrap li .listbox{
     width: 100%;
 }
+/* memo content is hiden in pc side */
 .list-wrap .listbox p{
     display: none;
     color: #47423f;
@@ -208,6 +208,7 @@ a.delete-btn:hover,a.delete-btn:active{
 .preview-wrap p {
     line-height: 1.5;
     color: #8e857e;
+    word-break:break-all; 
 }
 
 
@@ -225,8 +226,8 @@ a.delete-btn:hover,a.delete-btn:active{
     position: absolute;
     top: 70px;
     right: 10px;
-    bottom: 20px;
-    left: 270px;
+    bottom: 10px;
+    left: 20%;
     padding: 10px;
     box-shadow: 0 0 10px 5px #00BCD4;
     background-color: rgb(255, 255, 255);
@@ -401,8 +402,10 @@ a.delete-btn:hover,a.delete-btn:active{
         box-shadow: 0 1px 5px rgba(0,0,0,.15);        
     }
 
+/* memo content is shown in mobile sile */
     .list-wrap .listbox p{
         display: block;
+        word-break: break-all;
     }
 
     .list-wrap .listtitle{
@@ -437,6 +440,19 @@ a.delete-btn:hover,a.delete-btn:active{
     }
     a.delete-btn{
         margin-right: 5px;
+    }
+
+    .layer-container {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        padding: 10px;
+        box-shadow: 0 0 10px 5px #00BCD4;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        z-index: 100;
     }
 
     .layer-left{

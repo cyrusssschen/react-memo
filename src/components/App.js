@@ -6,7 +6,7 @@ import ContainerList from '../containers/ContainerList';
 import ContainerPreview from '../containers/ContainerPreview';
 import ContainerLayer from '../containers/ContainerLayer';
 import ContainerEdit from '../containers/ContainerEdit';
-import './App.css';
+import '../assets/App.css';
 
 
 class Root extends React.Component {
