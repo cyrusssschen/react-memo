@@ -1,4 +1,4 @@
-import { ADD_MEMO, DELETE_MEMO, SHOW_MEMO, SHOW_LAYER, SHOW_EDITER } from '../constants/index.js';
+import { ADD_MEMO, DELETE_MEMO, SHOW_MEMO, SHOW_LAYER, SHOW_EDITOR } from '../constants/index.js';
 import {setStorage, getStorage} from '../utils/storage';
 
 // Get initial state
@@ -8,7 +8,7 @@ const initialState = {
   memos: localmemos || [],
   cmemo: localcmemo || {},
   isShowLayer: false,
-  idShowEditer: false
+  idShowEditor: false
 };
 
 const memo = (state = {}, action) => {
@@ -96,9 +96,9 @@ const memoApp = (state = initialState, action) => {
       return Object.assign({}, state, {
         isShowLayer: action.isShowLayer
       });
-    case SHOW_EDITER:
+    case SHOW_EDITOR:
       return Object.assign({}, state, {
-        isShowEditer: action.isShowEditer
+        isShowEditor: action.isShowEditor
       });
     default:
       return state;

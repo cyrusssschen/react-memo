@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Edit from '../components/Edit';
-import { addMemo, showEditer } from '../actions/memo';
+import { addMemo, showEditor } from '../actions/memo';
 
 const mapStateToProps = (state, ownProps) => ({
-  isShowEditer: state.isShowEditer,
+  isShowEditor: state.isShowEditor,
   id: state.cmemo.id,
   title: state.cmemo.title,
   content: state.cmemo.content
@@ -12,14 +12,14 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   addNewClick: (title, content, id) => {
     dispatch(addMemo(title, content, id))
-    dispatch(showEditer(false))
+    dispatch(showEditor(false))
   },
-  closeLayerWrap: () => dispatch(showEditer(false))
+  closeLayerWrap: () => dispatch(showEditor(false))
 });
 
-const ContainerEditer = connect(
+const ContainerEditor = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Edit);
 
-export default ContainerEditer;
+export default ContainerEditor;

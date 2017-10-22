@@ -62,15 +62,38 @@ class Layer extends React.Component {
       <div className="layer-wrap">
         <div className="layer-container">
           <h2>New Tab</h2>
-          <i title="Save" className="iconfont icon-save" onClick={() => this.saveMemo(this.state.title, this.state.content)}>&#xe8c5;</i>
-          <i title="Close" className="iconfont icon-close" onClick={this.props.closeLayerWrap}>&#xe86d;</i>
+          <i title="Save"
+            className="iconfont icon-save"
+            onClick={() => this.saveMemo(this.state.title, this.state.content)}>&#xe8c5;
+            </i>
+          <i title="Close" className="iconfont icon-close"
+            onClick={this.props.closeLayerWrap}>&#xe86d;
+          </i>
           <div className="input-box">
-            <input type="text" placeholder="Please input title..." onChange={this.changeTitle} value={this.state.title} />
+            <input
+              type="text"
+              placeholder="Please input title..."
+              onFocus={(e) => e.target.placeholder = ""}
+              onBlur={(e) => e.target.placeholder = "Please input title..."}
+              onChange={this.changeTitle}
+              value={this.state.title} />
           </div>
           <div className="textarea-box">
-            <textarea onChange={this.changeContent} value={this.state.content} placeholder="Please input memo here!~~~"></textarea>
+            <textarea
+              onChange={this.changeContent}
+              value={this.state.content}
+              placeholder="Please input memo here!~~~"
+              onFocus={(e) => e.target.placeholder = ""}
+              onBlur={(e) => e.target.placeholder = "Please input memo here!~~~"}>
+            </textarea>
           </div>
-          <Rodal width={200} height={100} animation="rotate" closeOnEsc={true} visible={this.state.visible} onClose={this.hide.bind(this)}>
+          <Rodal
+            width={200}
+            height={100}
+            animation="rotate"
+            closeOnEsc={true}
+            visible={this.state.visible}
+            onClose={this.hide.bind(this)}>
             <div className="error-msg">
               <p>{this.state.errMsg}</p>
             </div>

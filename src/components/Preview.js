@@ -27,7 +27,7 @@ class Preview extends Component {
 
       return;
     }
-    this.props.editClick(!this.props.isShowEditer);
+    this.props.editClick(!this.props.isShowEditor);
   }
 
   deleteMemo() {

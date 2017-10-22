@@ -28,7 +28,7 @@ class Root extends React.Component {
 
   render() {
     const layer = this.props.isShowLayer ? <ContainerLayer /> : '';
-    const editer = this.props.isShowEditer ? <ContainerEdit /> : '';
+    const editor = this.props.isShowEditor ? <ContainerEdit /> : '';
     return (
       <div className="App">
         <Head></Head>
@@ -38,7 +38,7 @@ class Root extends React.Component {
             changeStatusShow={this.changeStatusShow}></ContainerPreview>
         </main>
         {layer}
-        {editer}
+        {editor}
       </div>
     );
   }
@@ -46,7 +46,7 @@ class Root extends React.Component {
 
 const mapStateToProps = (state, ownProps) => ({
   isShowLayer: state.isShowLayer,
-  isShowEditer: state.isShowEditer
+  isShowEditor: state.isShowEditor
 });
 
 const App = connect(

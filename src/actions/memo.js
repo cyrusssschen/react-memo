@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { getStorage } from '../utils/storage';
-import { ADD_MEMO, DELETE_MEMO, SHOW_MEMO, SHOW_LAYER, SHOW_EDITER } from '../constants';
+import { ADD_MEMO, DELETE_MEMO, SHOW_MEMO, SHOW_LAYER, SHOW_EDITOR } from '../constants';
 
 let memoId;
 let memosArr2;
@@ -65,9 +65,9 @@ export const showLayer = (isShowLayer) => {
 }
 
 // display editor layer
-export const showEditer = (isShowEditer) => {
+export const showEditor = (isShowEditor) => {
   return {
-    type: SHOW_EDITER,
-    isShowEditer
+    type: SHOW_EDITOR,
+    isShowEditor
   };
 }
