@@ -67,7 +67,7 @@ class Edit extends React.Component {
           <div className="textarea-box">
             <textarea onChange={this.changeContent} value={this.state.content}></textarea>
           </div>
-          <Rodal width="200" height="100" animation="fade" closeOnEsc="true" visible={this.state.visible} onClose={this.props.closeLayerWrap}>
+          <Rodal width={200} height={100} animation="fade" closeOnEsc={true} visible={this.state.visible} onClose={this.props.closeLayerWrap}>
             <div className="error-msg">
               <p>{this.state.errMsg}</p>
             </div>

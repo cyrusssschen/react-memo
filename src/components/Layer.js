@@ -70,7 +70,7 @@ class Layer extends React.Component {
           <div className="textarea-box">
             <textarea onChange={this.changeContent} value={this.state.content} placeholder="Please input memo here!~~~"></textarea>
           </div>
-          <Rodal width="200" height="100" animation="rotate" closeOnEsc="true" visible={this.state.visible} onClose={this.hide.bind(this)}>
+          <Rodal width={200} height={100} animation="rotate" closeOnEsc={true} visible={this.state.visible} onClose={this.hide.bind(this)}>
             <div className="error-msg">
               <p>{this.state.errMsg}</p>
             </div>
