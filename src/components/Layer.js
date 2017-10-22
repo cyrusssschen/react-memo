@@ -14,12 +14,12 @@ class Layer extends React.Component {
       errMsg: ''
     };
 
-    this.saveANote = this.saveANote.bind(this);
+    this.saveMemo = this.saveMemo.bind(this);
     this.changeTitle = this.changeTitle.bind(this);
     this.changeContent = this.changeContent.bind(this);
   }
 
-  saveANote(tit, ctt) {
+  saveMemo(tit, ctt) {
     if (!tit.trim() || !ctt.trim()) {
       let errMsg = "";
       if (!tit.trim()) {
@@ -62,7 +62,7 @@ class Layer extends React.Component {
       <div className="layer-wrap">
         <div className="layer-container">
           <h2>New Tab</h2>
-          <i title="Save" className="iconfont icon-save" onClick={() => this.saveANote(this.state.title, this.state.content)}>&#xe8c5;</i>
+          <i title="Save" className="iconfont icon-save" onClick={() => this.saveMemo(this.state.title, this.state.content)}>&#xe8c5;</i>
           <i title="Close" className="iconfont icon-close" onClick={this.props.closeLayerWrap}>&#xe86d;</i>
           <div className="input-box">
             <input type="text" placeholder="Please input title..." onChange={this.changeTitle} value={this.state.title} />

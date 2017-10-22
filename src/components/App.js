@@ -14,7 +14,7 @@ class Root extends React.Component {
     super(props);
 
     this.state = {
-      showNoteDetail: false,
+      showMemoDetail: false,
     };
 
     this.changeStatusShow = this.changeStatusShow.bind(this);
@@ -22,7 +22,7 @@ class Root extends React.Component {
 
   changeStatusShow(status) {
     this.setState({
-      showNoteDetail: status
+      showMemoDetail: status
     });
   }
 
@@ -33,8 +33,8 @@ class Root extends React.Component {
       <div className="App">
         <Head></Head>
         <main className="hastop">
-          <ContainerList showNoteDetail={this.state.showNoteDetail} changeStatusShow={this.changeStatusShow}></ContainerList>
-          <ContainerPreview showNoteDetail={this.state.showNoteDetail}
+          <ContainerList showMemoDetail={this.state.showMemoDetail} changeStatusShow={this.changeStatusShow}></ContainerList>
+          <ContainerPreview showMemoDetail={this.state.showMemoDetail}
             changeStatusShow={this.changeStatusShow}></ContainerPreview>
         </main>
         {layer}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ListItem = ({ id, title, content, time, clickPreview, showNoteDetail, cls}) => {
+const ListItem = ({ id, title, content, time, clickPreview, showMemoDetail, cls}) => {
   return (
     <li className={cls} data-id={id} onClick={() => {
       clickPreview(id)
