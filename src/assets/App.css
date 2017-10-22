@@ -390,6 +390,9 @@ a.delete-btn:hover,a.delete-btn:active{
         height: 50px;
         line-height: 50px;
     }
+    .logo{
+        margin-left: 10px;
+    }
     .head-show{
         height: 50px !important;
     }
