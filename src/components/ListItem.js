@@ -8,7 +8,7 @@ const ListItem = ({ id, title, content, time, clickPreview, showMemoDetail, cls}
       <div className="listbox">
         <h3 className="listtitle">{title}</h3>
         <p>{content}</p>
-        <span><i className="iconfont">&#xe64d;</i>{time}</span>
+        <span><i className="iconfont">&#xe600;</i>{time}</span>
       </div>
     </li>
   );

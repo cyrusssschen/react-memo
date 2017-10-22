@@ -54,8 +54,8 @@ class Preview extends Component {
     return (
       <div className="right-box">
         <div className="preview-top">
-          <a title="Edit" className="modify-btn iconfont" onClick={() => this.editMemo()}>&#xe738;</a>
-          <a title="Delete" className="delete-btn iconfont" onClick={() => this.deleteMemo()}>&#xe74b;</a>
+          <a title="Edit" className="modify-btn iconfont" onClick={() => this.editMemo()}>&#xe635;</a>
+          <a title="Delete" className="delete-btn iconfont" onClick={() => this.deleteMemo()}>&#xe7fb;</a>
         </div>
         <div onClick={this.props.onClick} className="preview-wrap markdown-body" dangerouslySetInnerHTML={{ __html: marked(`${this.props.currentMemo.title ? '# ' + this.props.currentMemo.title : ''}\n\n${this.props.currentMemo.content ? this.props.currentMemo.content : ''}`) }}></div>
         <Rodal width={200} height={100} animation="zoom" closeOnEsc={true} visible={this.state.visible} onClose={this.hideErrMsg.bind(this)}>

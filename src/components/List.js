@@ -18,8 +18,8 @@ const List = ({ listData, isShowLayer, showMemoDetail, changeStatusShow, onClick
   }
   return (
     <div className="left-box">
-      <h1 className={"iconfont"}>&#xe738; </h1>
-      <span title="Add" className="add-new" onClick={() => addBtnClick(!isShowLayer)}><i className="iconfont">&#xe889;</i></span>
+      <h1 className={"iconfont"}>&#xe674;</h1>
+      <span title="Add" className="add-new" onClick={() => addBtnClick(!isShowLayer)}><i className="iconfont">&#xe661;</i></span>
       {hasMemoToggle}
     </div>
   );

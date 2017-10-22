@@ -60,10 +60,10 @@ class Edit extends React.Component {
         <div className="layer-container">
           <h2>Edit Tab</h2>
           <i title="Save" className="iconfont icon-save"
-            onClick={() => this.saveMemo(this.state.title, this.state.content, this.props.id)}>&#xe8c5;</i>
+            onClick={() => this.saveMemo(this.state.title, this.state.content, this.props.id)}>&#xe61f;</i>
           <i title="Close"
             className="iconfont icon-close"
-            onClick={this.props.closeLayerWrap}>&#xe86d;</i>
+            onClick={this.props.closeLayerWrap}>&#xe72c;</i>
           <div className="input-box">
             <input
               type="text"

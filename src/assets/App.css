@@ -16,16 +16,34 @@
 }
 
 .logo {
+    width: 20%;
+    display: inline-block;
     text-align: center;
-    font-size: 22px;
+    font-weight: normal;
     color: #fff;
 }
 
 .head-nav{
+    width: 30%;
     overflow: hidden;
     float: right;
-    margin-right: 5px;
     list-style: none;
+}
+.head-nav li{
+    margin-right: 16px;
+    float: right;
+}
+.head-nav li a{
+    display: block;
+    padding: 0 10px;
+    font-size: 26px;
+    height: inherit;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.head-nav li a:hover{
+    color: #ddd;
 }
 
 main {
@@ -60,8 +78,9 @@ main.hastop{
 .left-box>h1 {
     padding: 10px 0;
     text-align: center;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: bold;
+    color: #00BCD4;
     height: 30px;
     line-height: 30px;
     background-color: #fff;
@@ -176,6 +195,7 @@ p.tips{
 
 a.modify-btn,a.delete-btn{
     display: inline-block;
+    color: #00BCD4;
     padding: 0 7px;
     height: 30px;
     line-height: 30px;
@@ -274,6 +294,7 @@ a.delete-btn:hover,a.delete-btn:active{
     line-height: 35px;
     text-align: center;
     z-index: 101;
+    color: #00BCD4;
     cursor: pointer;
     border-radius: 100%;
 }
@@ -436,6 +457,7 @@ a.delete-btn:hover,a.delete-btn:active{
         top: 5px;
     }
     a.modify-btn,a.delete-btn{
+        color: #00BCD4;
         margin: 5px;
     }
     a.delete-btn{

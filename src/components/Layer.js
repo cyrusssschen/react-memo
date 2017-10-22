@@ -64,10 +64,10 @@ class Layer extends React.Component {
           <h2>New Tab</h2>
           <i title="Save"
             className="iconfont icon-save"
-            onClick={() => this.saveMemo(this.state.title, this.state.content)}>&#xe8c5;
+            onClick={() => this.saveMemo(this.state.title, this.state.content)}>&#xe61f;
             </i>
           <i title="Close" className="iconfont icon-close"
-            onClick={this.props.closeLayerWrap}>&#xe86d;
+            onClick={this.props.closeLayerWrap}>&#xe72c;
           </i>
           <div className="input-box">
             <input
