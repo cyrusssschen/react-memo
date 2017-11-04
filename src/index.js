@@ -9,6 +9,8 @@ import './assets/index.css';
 
 let store = createStore(reducer);
 
+console.log(store.getState());
+
 ReactDOM.render(
   <Provider store={store}>
     <App />   

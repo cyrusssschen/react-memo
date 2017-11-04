@@ -1,10 +1,10 @@
 import React from 'react';
 import ListItem from './ListItem';
 
-const List = ({ listData, isShowLayer, showMemoDetail, changeStatusShow, onClick, addBtnClick }) => {
+const List = ({ listData, isShowLayer, showMemoDetail, onClick, addBtnClick }) => {
   let hasMemoToggle;
   if (listData.length === 0) {
-    hasMemoToggle = <p className="tips">There is no memo here!～</p>
+    hasMemoToggle = <p className="tips">There is no memo here!<br/>Click the button below to add your memo!~~</p>
   } else {
     hasMemoToggle = <ul className="list-wrap">
       {listData.map((item) => {
